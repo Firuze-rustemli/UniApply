@@ -1,0 +1,47 @@
+﻿@model ApplyUni.Models.study_program
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3 style="color:#f36270;">Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+          Study program name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.program_name)
+        </dd>
+
+        <dt>
+          Program fee
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.program_fee)
+        </dd>
+
+        <dt>
+           Study field nmae
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.study_field.field_name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button type="submit" class="btn btn-danger waves-light waves-effect w-md">Delete</button> | |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

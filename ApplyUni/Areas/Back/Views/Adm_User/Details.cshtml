@@ -1,0 +1,58 @@
+﻿@model ApplyUni.Models.Adm_User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="margin-top: 65px;">Details</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+            @Html.DisplayNameFor(model => model.fullname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fullname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.photo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.photo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrLevel.level_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsrLevel.level_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

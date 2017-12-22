@@ -1,0 +1,57 @@
+﻿@model ApplyUni.Models.University
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="margin-top: 65px;">Details</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rank_to_rait.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rank_to_rait.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uni_date.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uni_date.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uni_detail.average_tution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uni_detail.average_tution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uni_fact.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uni_fact.id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

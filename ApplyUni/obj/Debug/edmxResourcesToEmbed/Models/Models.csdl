@@ -1,0 +1,845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ApplyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="acount_plan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="descriptin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Acount_value" Relationship="Self.FK_Acount_value_acount_plan" FromRole="acount_plan" ToRole="Acount_value" />
+  </EntityType>
+  <EntityType Name="Acount_value">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="acount_plan_id" Type="Int32" />
+    <Property Name="data_icon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="acount_plan" Relationship="Self.FK_Acount_value_acount_plan" FromRole="Acount_value" ToRole="acount_plan" />
+  </EntityType>
+  <EntityType Name="Adm_User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="user_level" Type="Int32" />
+    <NavigationProperty Name="UsrLevel" Relationship="Self.FK_Adm_User_UsrLevel" FromRole="Adm_User" ToRole="UsrLevel" />
+    <Property Name="photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Bugdet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="max_budget" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="min_budget" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Bugdet" FromRole="Bugdet" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="lastest_post" Relationship="Self.FK_lastest_post_Category" FromRole="Category" ToRole="lastest_post" />
+  </EntityType>
+  <EntityType Name="citizinship">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_citizinship" FromRole="citizinship" ToRole="Users" />
+    <Property Name="citizinship1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="country_id" Type="Int32" />
+    <Property Name="city_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_City_Country" FromRole="City" ToRole="Country" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="topic_id" Type="Int32" />
+    <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Topic" Relationship="Self.FK_Contact_Topic" FromRole="Contact" ToRole="Topic" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="City" Relationship="Self.FK_City_Country" FromRole="Country" ToRole="City" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Country" FromRole="Country" ToRole="Users" />
+    <NavigationProperty Name="Users1" Relationship="Self.FK_Users_Country1" FromRole="Country" ToRole="Users" />
+    <Property Name="country_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="degree_level">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="level" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="value" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_degree_level" FromRole="degree_level" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Faq">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="descripition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Journey">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lang_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="profiency_id" Type="Int32" />
+    <Property Name="test_type_id" Type="Int32" />
+    <Property Name="score" Type="Int32" />
+    <NavigationProperty Name="profiency" Relationship="Self.FK_Language_profiency" FromRole="Language" ToRole="profiency" />
+    <NavigationProperty Name="Test_type" Relationship="Self.FK_Language_Test_type" FromRole="Language" ToRole="Test_type" />
+  </EntityType>
+  <EntityType Name="lastest_post">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_lastest_post_Category" FromRole="lastest_post" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="Pay_method">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="card_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK_Payment_method" FromRole="Pay_method" ToRole="Payment" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="card_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="card_number" Type="Int32" />
+    <Property Name="cvn_number" Type="Int32" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="pay_method_id" Type="Int32" />
+    <NavigationProperty Name="Pay_method" Relationship="Self.FK_Payment_method" FromRole="Payment" ToRole="Pay_method" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Payment_Users1" FromRole="Payment" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="post_galery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="type_id" Type="Int32" />
+    <NavigationProperty Name="Type_blog" Relationship="ApplyModel.FK_post_galery_Type" FromRole="post_galery" ToRole="Type_blog" />
+  </EntityType>
+  <EntityType Name="profiency">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="profiency_level" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Language" Relationship="Self.FK_Language_profiency" FromRole="profiency" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="rank_to_rait">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="raiting_id" Type="Int32" />
+    <Property Name="ranking_id" Type="Int32" />
+    <NavigationProperty Name="ranking_rating" Relationship="Self.FK_rank_to_rait_ranking_rating" FromRole="rank_to_rait" ToRole="ranking_rating" />
+    <NavigationProperty Name="Uni_ranking" Relationship="Self.FK_rank_to_rait_Uni_ranking" FromRole="rank_to_rait" ToRole="Uni_ranking" />
+    <NavigationProperty Name="University" Relationship="Self.FK_University_rank_to_rait" FromRole="rank_to_rait" ToRole="University" />
+  </EntityType>
+  <EntityType Name="ranking_rating">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rate" Type="Decimal" Precision="11" Scale="4" />
+    <NavigationProperty Name="rank_to_rait" Relationship="Self.FK_rank_to_rait_ranking_rating" FromRole="ranking_rating" ToRole="rank_to_rait" />
+  </EntityType>
+  <EntityType Name="referance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ref_firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ref_lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ref_email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ref_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ref_relation" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="essasy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="study_field">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="field_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="study_field_uni" Relationship="Self.FK_study_field_uni_study_field" FromRole="study_field" ToRole="study_field_uni" />
+    <NavigationProperty Name="study_program" Relationship="Self.FK_study_program_study_field" FromRole="study_field" ToRole="study_program" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_study_field" FromRole="study_field" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="study_field_uni">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uni_id" Type="Int32" />
+    <Property Name="study_field_id" Type="Int32" />
+    <NavigationProperty Name="study_field" Relationship="Self.FK_study_field_uni_study_field" FromRole="study_field_uni" ToRole="study_field" />
+    <NavigationProperty Name="University" Relationship="Self.FK_study_field_uni_University" FromRole="study_field_uni" ToRole="University" />
+  </EntityType>
+  <EntityType Name="study_program">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="program_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="program_fee" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="field_id" Type="Int32" />
+    <NavigationProperty Name="study_field" Relationship="Self.FK_study_program_study_field" FromRole="study_program" ToRole="study_field" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Test_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Language" Relationship="Self.FK_Language_Test_type" FromRole="Test_type" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="Topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="topic_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Contact" Relationship="Self.FK_Contact_Topic" FromRole="Topic" ToRole="Contact" />
+  </EntityType>
+  <EntityType Name="uni_date">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="graduate_date" Type="DateTime" Precision="0" />
+    <Property Name="start_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="University" Relationship="Self.FK_University_uni_date" FromRole="uni_date" ToRole="University" />
+  </EntityType>
+  <EntityType Name="Uni_detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="average_tution" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="accept_rate" Type="Decimal" Precision="19" Scale="9" />
+    <Property Name="scholorship" Type="Int32" />
+    <Property Name="student_fac_retio" Type="Int32" />
+    <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="University" Relationship="Self.FK_University_Uni_detail" FromRole="Uni_detail" ToRole="University" />
+  </EntityType>
+  <EntityType Name="Uni_fact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="point" Type="Int32" />
+    <NavigationProperty Name="University" Relationship="Self.FK_University_Uni_fact" FromRole="Uni_fact" ToRole="University" />
+  </EntityType>
+  <EntityType Name="Uni_ranking">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ranking_category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="rank_to_rait" Relationship="Self.FK_rank_to_rait_Uni_ranking" FromRole="Uni_ranking" ToRole="rank_to_rait" />
+  </EntityType>
+  <EntityType Name="University">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="detail_id" Type="Int32" />
+    <Property Name="fact_id" Type="Int32" />
+    <Property Name="rank_to_rate_id" Type="Int32" />
+    <Property Name="uni_date_id" Type="Int32" />
+    <NavigationProperty Name="rank_to_rait" Relationship="Self.FK_University_rank_to_rait" FromRole="University" ToRole="rank_to_rait" />
+    <NavigationProperty Name="study_field_uni" Relationship="Self.FK_study_field_uni_University" FromRole="University" ToRole="study_field_uni" />
+    <NavigationProperty Name="uni_date" Relationship="Self.FK_University_uni_date" FromRole="University" ToRole="uni_date" />
+    <NavigationProperty Name="Uni_detail" Relationship="Self.FK_University_Uni_detail" FromRole="University" ToRole="Uni_detail" />
+    <NavigationProperty Name="Uni_fact" Relationship="Self.FK_University_Uni_fact" FromRole="University" ToRole="Uni_fact" />
+  </EntityType>
+  <EntityType Name="user_finance_plan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="plan_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_user_finance_plan" FromRole="user_finance_plan" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="birthday" Type="DateTime" Precision="0" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_country_id" Type="Int32" />
+    <Property Name="study_field_id" Type="Int32" />
+    <Property Name="user_study_cont_id" Type="Int32" />
+    <Property Name="degree_level_id" Type="Int32" />
+    <Property Name="finance_plan_id" Type="Int32" />
+    <Property Name="budget_id" Type="Int32" />
+    <Property Name="citizinship_id" Type="Int32" />
+    <Property Name="adress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="postcode" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bugdet" Relationship="Self.FK_Users_Bugdet" FromRole="Users" ToRole="Bugdet" />
+    <NavigationProperty Name="citizinship" Relationship="Self.FK_Users_citizinship" FromRole="Users" ToRole="citizinship" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_Users_Country" FromRole="Users" ToRole="Country" />
+    <NavigationProperty Name="Country1" Relationship="Self.FK_Users_Country1" FromRole="Users" ToRole="Country" />
+    <NavigationProperty Name="degree_level" Relationship="Self.FK_Users_degree_level" FromRole="Users" ToRole="degree_level" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK_Payment_Users1" FromRole="Users" ToRole="Payment" />
+    <NavigationProperty Name="study_field" Relationship="Self.FK_Users_study_field" FromRole="Users" ToRole="study_field" />
+    <NavigationProperty Name="user_finance_plan" Relationship="Self.FK_Users_user_finance_plan" FromRole="Users" ToRole="user_finance_plan" />
+  </EntityType>
+  <EntityType Name="UsrLevel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="level_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Adm_User" Relationship="Self.FK_Adm_User_UsrLevel" FromRole="UsrLevel" ToRole="Adm_User" />
+  </EntityType>
+  <Association Name="FK_Acount_value_acount_plan">
+    <End Role="acount_plan" Type="Self.acount_plan" Multiplicity="0..1" />
+    <End Role="Acount_value" Type="Self.Acount_value" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="acount_plan">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Acount_value">
+        <PropertyRef Name="acount_plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Adm_User_UsrLevel">
+    <End Role="UsrLevel" Type="Self.UsrLevel" Multiplicity="0..1" />
+    <End Role="Adm_User" Type="Self.Adm_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsrLevel">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Adm_User">
+        <PropertyRef Name="user_level" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Bugdet">
+    <End Role="Bugdet" Type="Self.Bugdet" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bugdet">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="budget_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lastest_post_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="lastest_post" Type="Self.lastest_post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="lastest_post">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_citizinship">
+    <End Role="citizinship" Type="Self.citizinship" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="citizinship">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="citizinship_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_Topic">
+    <End Role="Topic" Type="Self.Topic" Multiplicity="0..1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="topic_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="user_country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Country1">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="user_study_cont_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_degree_level">
+    <End Role="degree_level" Type="Self.degree_level" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="degree_level">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="degree_level_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Language_profiency">
+    <End Role="profiency" Type="Self.profiency" Multiplicity="0..1" />
+    <End Role="Language" Type="Self.Language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="profiency">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Language">
+        <PropertyRef Name="profiency_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Language_Test_type">
+    <End Role="Test_type" Type="Self.Test_type" Multiplicity="0..1" />
+    <End Role="Language" Type="Self.Language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Test_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Language">
+        <PropertyRef Name="test_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_method">
+    <End Role="Pay_method" Type="Self.Pay_method" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pay_method">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="pay_method_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Users1">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rank_to_rait_ranking_rating">
+    <End Role="ranking_rating" Type="Self.ranking_rating" Multiplicity="0..1" />
+    <End Role="rank_to_rait" Type="Self.rank_to_rait" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ranking_rating">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="rank_to_rait">
+        <PropertyRef Name="raiting_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rank_to_rait_Uni_ranking">
+    <End Role="Uni_ranking" Type="Self.Uni_ranking" Multiplicity="0..1" />
+    <End Role="rank_to_rait" Type="Self.rank_to_rait" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uni_ranking">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="rank_to_rait">
+        <PropertyRef Name="ranking_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_University_rank_to_rait">
+    <End Role="rank_to_rait" Type="Self.rank_to_rait" Multiplicity="0..1" />
+    <End Role="University" Type="Self.University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rank_to_rait">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="University">
+        <PropertyRef Name="rank_to_rate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_study_field_uni_study_field">
+    <End Role="study_field" Type="Self.study_field" Multiplicity="0..1" />
+    <End Role="study_field_uni" Type="Self.study_field_uni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="study_field">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="study_field_uni">
+        <PropertyRef Name="study_field_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_study_program_study_field">
+    <End Role="study_field" Type="Self.study_field" Multiplicity="0..1" />
+    <End Role="study_program" Type="Self.study_program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="study_field">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="study_program">
+        <PropertyRef Name="field_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_study_field">
+    <End Role="study_field" Type="Self.study_field" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="study_field">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="study_field_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_study_field_uni_University">
+    <End Role="University" Type="Self.University" Multiplicity="0..1" />
+    <End Role="study_field_uni" Type="Self.study_field_uni" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="University">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="study_field_uni">
+        <PropertyRef Name="uni_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_University_uni_date">
+    <End Role="uni_date" Type="Self.uni_date" Multiplicity="0..1" />
+    <End Role="University" Type="Self.University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uni_date">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="University">
+        <PropertyRef Name="uni_date_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_University_Uni_detail">
+    <End Role="Uni_detail" Type="Self.Uni_detail" Multiplicity="0..1" />
+    <End Role="University" Type="Self.University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uni_detail">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="University">
+        <PropertyRef Name="detail_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_University_Uni_fact">
+    <End Role="Uni_fact" Type="Self.Uni_fact" Multiplicity="0..1" />
+    <End Role="University" Type="Self.University" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uni_fact">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="University">
+        <PropertyRef Name="fact_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_user_finance_plan">
+    <End Role="user_finance_plan" Type="Self.user_finance_plan" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_finance_plan">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="finance_plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ApplyEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="acount_plan" EntityType="Self.acount_plan" />
+    <EntitySet Name="Acount_value" EntityType="Self.Acount_value" />
+    <EntitySet Name="Adm_User" EntityType="Self.Adm_User" />
+    <EntitySet Name="Bugdet" EntityType="Self.Bugdet" />
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="citizinship" EntityType="Self.citizinship" />
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" />
+    <EntitySet Name="Country" EntityType="Self.Country" />
+    <EntitySet Name="degree_level" EntityType="Self.degree_level" />
+    <EntitySet Name="Faq" EntityType="Self.Faq" />
+    <EntitySet Name="Journey" EntityType="Self.Journey" />
+    <EntitySet Name="Language" EntityType="Self.Language" />
+    <EntitySet Name="lastest_post" EntityType="Self.lastest_post" />
+    <EntitySet Name="Pay_method" EntityType="Self.Pay_method" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" />
+    <EntitySet Name="post_galery" EntityType="Self.post_galery" />
+    <EntitySet Name="profiency" EntityType="Self.profiency" />
+    <EntitySet Name="rank_to_rait" EntityType="Self.rank_to_rait" />
+    <EntitySet Name="ranking_rating" EntityType="Self.ranking_rating" />
+    <EntitySet Name="referance" EntityType="Self.referance" />
+    <EntitySet Name="study_field" EntityType="Self.study_field" />
+    <EntitySet Name="study_field_uni" EntityType="Self.study_field_uni" />
+    <EntitySet Name="study_program" EntityType="Self.study_program" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Test_type" EntityType="Self.Test_type" />
+    <EntitySet Name="Topic" EntityType="Self.Topic" />
+    <EntitySet Name="uni_date" EntityType="Self.uni_date" />
+    <EntitySet Name="Uni_detail" EntityType="Self.Uni_detail" />
+    <EntitySet Name="Uni_fact" EntityType="Self.Uni_fact" />
+    <EntitySet Name="Uni_ranking" EntityType="Self.Uni_ranking" />
+    <EntitySet Name="University" EntityType="Self.University" />
+    <EntitySet Name="user_finance_plan" EntityType="Self.user_finance_plan" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="UsrLevel" EntityType="Self.UsrLevel" />
+    <AssociationSet Name="FK_Acount_value_acount_plan" Association="Self.FK_Acount_value_acount_plan">
+      <End Role="acount_plan" EntitySet="acount_plan" />
+      <End Role="Acount_value" EntitySet="Acount_value" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adm_User_UsrLevel" Association="Self.FK_Adm_User_UsrLevel">
+      <End Role="UsrLevel" EntitySet="UsrLevel" />
+      <End Role="Adm_User" EntitySet="Adm_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Bugdet" Association="Self.FK_Users_Bugdet">
+      <End Role="Bugdet" EntitySet="Bugdet" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lastest_post_Category" Association="Self.FK_lastest_post_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="lastest_post" EntitySet="lastest_post" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_citizinship" Association="Self.FK_Users_citizinship">
+      <End Role="citizinship" EntitySet="citizinship" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Country" Association="Self.FK_City_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_Topic" Association="Self.FK_Contact_Topic">
+      <End Role="Topic" EntitySet="Topic" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Country" Association="Self.FK_Users_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Country1" Association="Self.FK_Users_Country1">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_degree_level" Association="Self.FK_Users_degree_level">
+      <End Role="degree_level" EntitySet="degree_level" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Language_profiency" Association="Self.FK_Language_profiency">
+      <End Role="profiency" EntitySet="profiency" />
+      <End Role="Language" EntitySet="Language" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Language_Test_type" Association="Self.FK_Language_Test_type">
+      <End Role="Test_type" EntitySet="Test_type" />
+      <End Role="Language" EntitySet="Language" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_method" Association="Self.FK_Payment_method">
+      <End Role="Pay_method" EntitySet="Pay_method" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Users1" Association="Self.FK_Payment_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rank_to_rait_ranking_rating" Association="Self.FK_rank_to_rait_ranking_rating">
+      <End Role="ranking_rating" EntitySet="ranking_rating" />
+      <End Role="rank_to_rait" EntitySet="rank_to_rait" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rank_to_rait_Uni_ranking" Association="Self.FK_rank_to_rait_Uni_ranking">
+      <End Role="Uni_ranking" EntitySet="Uni_ranking" />
+      <End Role="rank_to_rait" EntitySet="rank_to_rait" />
+    </AssociationSet>
+    <AssociationSet Name="FK_University_rank_to_rait" Association="Self.FK_University_rank_to_rait">
+      <End Role="rank_to_rait" EntitySet="rank_to_rait" />
+      <End Role="University" EntitySet="University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_study_field_uni_study_field" Association="Self.FK_study_field_uni_study_field">
+      <End Role="study_field" EntitySet="study_field" />
+      <End Role="study_field_uni" EntitySet="study_field_uni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_study_program_study_field" Association="Self.FK_study_program_study_field">
+      <End Role="study_field" EntitySet="study_field" />
+      <End Role="study_program" EntitySet="study_program" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_study_field" Association="Self.FK_Users_study_field">
+      <End Role="study_field" EntitySet="study_field" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_study_field_uni_University" Association="Self.FK_study_field_uni_University">
+      <End Role="University" EntitySet="University" />
+      <End Role="study_field_uni" EntitySet="study_field_uni" />
+    </AssociationSet>
+    <AssociationSet Name="FK_University_uni_date" Association="Self.FK_University_uni_date">
+      <End Role="uni_date" EntitySet="uni_date" />
+      <End Role="University" EntitySet="University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_University_Uni_detail" Association="Self.FK_University_Uni_detail">
+      <End Role="Uni_detail" EntitySet="Uni_detail" />
+      <End Role="University" EntitySet="University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_University_Uni_fact" Association="Self.FK_University_Uni_fact">
+      <End Role="Uni_fact" EntitySet="Uni_fact" />
+      <End Role="University" EntitySet="University" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_user_finance_plan" Association="Self.FK_Users_user_finance_plan">
+      <End Role="user_finance_plan" EntitySet="user_finance_plan" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="Type_blog" EntityType="ApplyModel.Type_blog" />
+    <AssociationSet Name="FK_post_galery_Type" Association="ApplyModel.FK_post_galery_Type">
+      <End Role="Type_blog" EntitySet="Type_blog" />
+      <End Role="post_galery" EntitySet="post_galery" />
+    </AssociationSet>
+    <EntitySet Name="SameDate" EntityType="ApplyModel.SameDate" />
+  </EntityContainer>
+  <EntityType Name="Type_blog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="post_galery" Relationship="ApplyModel.FK_post_galery_Type" FromRole="Type_blog" ToRole="post_galery" />
+  </EntityType>
+  <Association Name="FK_post_galery_Type">
+    <End Type="ApplyModel.Type_blog" Role="Type_blog" Multiplicity="0..1" />
+    <End Type="ApplyModel.post_galery" Role="post_galery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_blog">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="post_galery">
+        <PropertyRef Name="type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SameDate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="logo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="facebook" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="linkedin" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="twitter" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="google" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="instagram" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,50 @@
+﻿@model ApplyUni.Models.post_galery
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="margin-top: 65px;">Details</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+           Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+          Photo
+        </dt>
+
+        <dd>
+            <img src="~/Uploads/@Html.DisplayFor(model => model.photo)" width="100" />
+        </dd>
+
+        <dt>
+           Description
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            Blog type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type_blog.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

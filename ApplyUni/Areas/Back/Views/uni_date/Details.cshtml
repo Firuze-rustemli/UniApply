@@ -1,0 +1,34 @@
+﻿@model ApplyUni.Models.uni_date
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+            @Html.DisplayNameFor(model => model.graduate_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.graduate_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.start_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.start_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

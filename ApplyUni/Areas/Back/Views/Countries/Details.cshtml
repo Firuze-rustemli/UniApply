@@ -1,0 +1,26 @@
+﻿@model ApplyUni.Models.Country
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+       Country name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.country_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

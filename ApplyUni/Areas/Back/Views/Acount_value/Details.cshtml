@@ -1,0 +1,41 @@
+﻿@model ApplyUni.Models.Acount_value
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+          Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+           Acount plan
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acount_plan.title)
+        </dd>
+        <dt>
+            Data icon
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_icon)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

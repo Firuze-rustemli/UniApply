@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ApplyModelContainer" CdmEntityContainer="ApplyEntities3">
+    <EntitySetMapping Name="acount_plan">
+      <EntityTypeMapping TypeName="ApplyModel.acount_plan">
+        <MappingFragment StoreEntitySet="acount_plan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="descriptin" ColumnName="descriptin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acount_value">
+      <EntityTypeMapping TypeName="ApplyModel.Acount_value">
+        <MappingFragment StoreEntitySet="Acount_value">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="acount_plan_id" ColumnName="acount_plan_id" />
+          <ScalarProperty Name="data_icon" ColumnName="data-icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adm_User">
+      <EntityTypeMapping TypeName="ApplyModel.Adm_User">
+        <MappingFragment StoreEntitySet="Adm_User">
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="user_level" ColumnName="user_level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bugdet">
+      <EntityTypeMapping TypeName="ApplyModel.Bugdet">
+        <MappingFragment StoreEntitySet="Bugdet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="max_budget" ColumnName="max-budget" />
+          <ScalarProperty Name="min_budget" ColumnName="min-budget" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="ApplyModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="citizinship">
+      <EntityTypeMapping TypeName="ApplyModel.citizinship">
+        <MappingFragment StoreEntitySet="citizinship">
+          <ScalarProperty Name="citizinship1" ColumnName="citizinship" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="ApplyModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contact">
+      <EntityTypeMapping TypeName="ApplyModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+          <ScalarProperty Name="message" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="ApplyModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="degree_level">
+      <EntityTypeMapping TypeName="ApplyModel.degree_level">
+        <MappingFragment StoreEntitySet="degree_level">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Faq">
+      <EntityTypeMapping TypeName="ApplyModel.Faq">
+        <MappingFragment StoreEntitySet="Faq">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="descripition" ColumnName="descripition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Journey">
+      <EntityTypeMapping TypeName="ApplyModel.Journey">
+        <MappingFragment StoreEntitySet="Journey">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Language">
+      <EntityTypeMapping TypeName="ApplyModel.Language">
+        <MappingFragment StoreEntitySet="Language">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lang_name" ColumnName="lang_name" />
+          <ScalarProperty Name="profiency_id" ColumnName="profiency_id" />
+          <ScalarProperty Name="test_type_id" ColumnName="test_type_id" />
+          <ScalarProperty Name="score" ColumnName="score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lastest_post">
+      <EntityTypeMapping TypeName="ApplyModel.lastest_post">
+        <MappingFragment StoreEntitySet="lastest_post">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pay_method">
+      <EntityTypeMapping TypeName="ApplyModel.Pay_method">
+        <MappingFragment StoreEntitySet="Pay_method">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="card_name" ColumnName="card_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment">
+      <EntityTypeMapping TypeName="ApplyModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="card_name" ColumnName="card_name" />
+          <ScalarProperty Name="card_number" ColumnName="card_number" />
+          <ScalarProperty Name="cvn_number" ColumnName="cvn_number" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="pay_method_id" ColumnName="pay_method_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="post_galery">
+      <EntityTypeMapping TypeName="ApplyModel.post_galery">
+        <MappingFragment StoreEntitySet="post_galery">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="profiency">
+      <EntityTypeMapping TypeName="ApplyModel.profiency">
+        <MappingFragment StoreEntitySet="profiency">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="profiency_level" ColumnName="profiency_level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rank_to_rait">
+      <EntityTypeMapping TypeName="ApplyModel.rank_to_rait">
+        <MappingFragment StoreEntitySet="rank_to_rait">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="raiting_id" ColumnName="raiting_id" />
+          <ScalarProperty Name="ranking_id" ColumnName="ranking_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ranking_rating">
+      <EntityTypeMapping TypeName="ApplyModel.ranking_rating">
+        <MappingFragment StoreEntitySet="ranking_rating">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="referance">
+      <EntityTypeMapping TypeName="ApplyModel.referance">
+        <MappingFragment StoreEntitySet="referance">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ref_firstname" ColumnName="ref_firstname" />
+          <ScalarProperty Name="ref_lastname" ColumnName="ref_lastname" />
+          <ScalarProperty Name="ref_email" ColumnName="ref_email" />
+          <ScalarProperty Name="ref_Phone" ColumnName="ref_Phone" />
+          <ScalarProperty Name="ref_relation" ColumnName="ref_relation" />
+          <ScalarProperty Name="essasy" ColumnName="essasy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="study_field">
+      <EntityTypeMapping TypeName="ApplyModel.study_field">
+        <MappingFragment StoreEntitySet="study_field">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="field_name" ColumnName="field_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="study_field_uni">
+      <EntityTypeMapping TypeName="ApplyModel.study_field_uni">
+        <MappingFragment StoreEntitySet="study_field_uni">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uni_id" ColumnName="uni_id" />
+          <ScalarProperty Name="study_field_id" ColumnName="study_field_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="study_program">
+      <EntityTypeMapping TypeName="ApplyModel.study_program">
+        <MappingFragment StoreEntitySet="study_program">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="program_name" ColumnName="program_name" />
+          <ScalarProperty Name="program_fee" ColumnName="program_fee" />
+          <ScalarProperty Name="field_id" ColumnName="field_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ApplyModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Test_type">
+      <EntityTypeMapping TypeName="ApplyModel.Test_type">
+        <MappingFragment StoreEntitySet="Test_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type_name" ColumnName="type_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topic">
+      <EntityTypeMapping TypeName="ApplyModel.Topic">
+        <MappingFragment StoreEntitySet="Topic">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="topic_name" ColumnName="topic_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uni_date">
+      <EntityTypeMapping TypeName="ApplyModel.uni_date">
+        <MappingFragment StoreEntitySet="uni_date">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="graduate_date" ColumnName="graduate_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uni_detail">
+      <EntityTypeMapping TypeName="ApplyModel.Uni_detail">
+        <MappingFragment StoreEntitySet="Uni_detail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="average_tution" ColumnName="average_tution" />
+          <ScalarProperty Name="accept_rate" ColumnName="accept_rate" />
+          <ScalarProperty Name="scholorship" ColumnName="scholorship" />
+          <ScalarProperty Name="student_fac_retio" ColumnName="student_fac_retio" />
+          <ScalarProperty Name="information" ColumnName="information" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uni_fact">
+      <EntityTypeMapping TypeName="ApplyModel.Uni_fact">
+        <MappingFragment StoreEntitySet="Uni_fact">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="point" ColumnName="point" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uni_ranking">
+      <EntityTypeMapping TypeName="ApplyModel.Uni_ranking">
+        <MappingFragment StoreEntitySet="Uni_ranking">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ranking_category" ColumnName="ranking_category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="University">
+      <EntityTypeMapping TypeName="ApplyModel.University">
+        <MappingFragment StoreEntitySet="University">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="detail_id" ColumnName="detail_id" />
+          <ScalarProperty Name="fact_id" ColumnName="fact_id" />
+          <ScalarProperty Name="rank_to_rate_id" ColumnName="rank_to_rate_id" />
+          <ScalarProperty Name="uni_date_id" ColumnName="uni_date_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_finance_plan">
+      <EntityTypeMapping TypeName="ApplyModel.user_finance_plan">
+        <MappingFragment StoreEntitySet="user_finance_plan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="plan_name" ColumnName="plan_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ApplyModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="user_country_id" ColumnName="user_country_id" />
+          <ScalarProperty Name="study_field_id" ColumnName="study_field_id" />
+          <ScalarProperty Name="user_study_cont_id" ColumnName="user_study_cont_id" />
+          <ScalarProperty Name="degree_level_id" ColumnName="degree_level_id" />
+          <ScalarProperty Name="finance_plan_id" ColumnName="finance_plan_id" />
+          <ScalarProperty Name="budget_id" ColumnName="budget_id" />
+          <ScalarProperty Name="citizinship_id" ColumnName="citizinship_id" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsrLevel">
+      <EntityTypeMapping TypeName="ApplyModel.UsrLevel">
+        <MappingFragment StoreEntitySet="UsrLevel">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="level_name" ColumnName="level_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type_blog">
+      <EntityTypeMapping TypeName="ApplyModel.Type_blog">
+        <MappingFragment StoreEntitySet="Type_blog">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SameDate">
+      <EntityTypeMapping TypeName="ApplyModel.SameDate">
+        <MappingFragment StoreEntitySet="SameDate">
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="instagram" ColumnName="instagram" />
+          <ScalarProperty Name="google" ColumnName="google" />
+          <ScalarProperty Name="twitter" ColumnName="twitter" />
+          <ScalarProperty Name="linkedin" ColumnName="linkedin" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

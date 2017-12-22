@@ -1,0 +1,25 @@
+﻿@model ApplyUni.Models.Topic
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+    <h4 style="margin-top: 65px;">Details</h4>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+            @Html.DisplayNameFor(model => model.topic_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.topic_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

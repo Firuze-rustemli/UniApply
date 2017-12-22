@@ -1,0 +1,72 @@
+﻿@model ApplyUni.Models.Payment
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="margin-top:60px;">Delete</h2>
+<h3 style="color:#f36270;">Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+           Card name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.card_name)
+        </dd>
+
+        <dt>
+            Card number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.card_number)
+        </dd>
+
+        <dt>
+            CVN number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cvn_number)
+        </dd>
+
+        <dt>
+          Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+           Pay method
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pay_method.card_name)
+        </dd>
+
+        <dt>
+          User name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Users.first_name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button type="submit" class="btn btn-danger waves-light waves-effect w-md">Delete</button> | |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

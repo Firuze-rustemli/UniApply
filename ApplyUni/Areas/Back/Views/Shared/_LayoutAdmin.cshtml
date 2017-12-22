@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="~/Areas/Public/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
+    <!-- App favicon -->
+    <link rel="icon" type="image/png" href="~/Areas/Public/assets/images/logo.png">
+    <!-- DataTables -->
+    <link href="~/Areas/Public/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Public/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="~/Areas/Public/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link href="~/Areas/Public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Public/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Public/assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Areas/Public/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="~/Areas/Public/assets/js/modernizr.min.js"></script>
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="wrapper">
+        <!-- Top Bar Start -->
+        <div class="topbar">
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="@Url.Action("Index","Dashboard")" class="logo">
+                    <span>
+                        <img src="~/Uploads/logoUp.png" alt="" height="16">
+                    </span>
+                    <i>
+                        <img src="~/Uploads/151220171700336837logoUp.png" alt="" height="28">
+                    </i>
+                </a>
+            </div>
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                    <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false">
+                            <img src="~/Uploads/@Session["userPhoto"]" alt="user" class="rounded-circle">
+                            <span class="ml-1"><i class="mdi mdi-chevron-down">@Session["userName"]</i></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h6 class="text-overflow m-0">Welcome !</h6>
+                            </div>
+                         
+                            <a  href="@Url.Action("Logout","Dashboard")" class="dropdown-item notify-item">
+                                <i class="fi-power"></i> <span>Logout</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left waves-light waves-effect">
+                            <i class="dripicons-menu"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Top Bar End -->
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="slimscroll-menu" id="remove-scroll">
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu" id="side-menu">
+                        <li class="menu-title">Navigation</li>
+
+                        <li>
+                            <a href="@Url.Action("Index","Dashboard")">
+                                <i class="fi-air-play"></i><span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fa fa-th-large" aria-hidden="true"></i> <span> Blog </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="@Url.Action("Index","Categories")"><i class="fa fa-clipboard" aria-hidden="true"></i><span>Blog Category</span> </a></li>
+                                <li><a href="@Url.Action("Index","lastest_post")"><i class="fa fa-file" aria-hidden="true"></i><span>Blog Posts</span> </a></li>
+                                <li><a href="@Url.Action("Index","post_galery")"><i class="fa fa-picture-o" aria-hidden="true"></i><span>Blog Galery</span> </a></li>
+                                <li><a href="@Url.Action("Index","type_blog")"><i class="fa fa-picture-o" aria-hidden="true"></i><span>Blog Type</span> </a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fa fa-users" aria-hidden="true"></i> <span> About Users </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="@Url.Action("Index","Users")"><i class="mdi mdi-account-multiple-outline"></i> <span>User</span> </a></li>
+                                <li><a href="@Url.Action("Index","countries")"><i class="fa fa-globe" aria-hidden="true"></i><span>Countries</span> </a></li>
+                                <li><a href="@Url.Action("Index","cities")"><i class="fa fa-building-o" aria-hidden="true"></i> <span>Cities</span> </a></li>
+                                <li><a href="@Url.Action("Index","citizinships")"><i class="fa fa-male" aria-hidden="true"></i><span>Citizinship</span> </a></li>
+                                <li><a href="@Url.Action("Index","user_finance_plan")"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span>User Plans</span> </a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fa fa-university" aria-hidden="true"></i> <span> Universities</span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="@Url.Action("Index","Universities")"><i class="fa fa-university" aria-hidden="true"></i> <span>Univeristy</span> </a></li>
+                                <li><a href="@Url.Action("Index","uni_detail")"><i class="fa fa-cogs" aria-hidden="true"></i><span>University details</span> </a></li>
+                                <li><a href="@Url.Action("Index","uni_ranking")"><i class="fa fa-random" aria-hidden="true"></i><span>University ranking</span> </a></li>
+                                <li><a href="@Url.Action("Index","uni_fact")"><i class="fa fa-industry" aria-hidden="true"></i><span>Faculty</span> </a></li>
+                                <li><a href="@Url.Action("Index","uni_date")"><i class="fa fa-clock-o" aria-hidden="true"></i><span>University date</span> </a></li>
+                                <li><a href="@Url.Action("Index","degree_level")"><i class="fa fa-area-chart" aria-hidden="true"></i><span>Degree level</span> </a></li>
+                                <li><a href="@Url.Action("Index","study_field")"><i class="fa fa-files-o" aria-hidden="true"></i> <span>Study field</span> </a></li>
+                                <li><a href="@Url.Action("Index","study_field_uni")"><i class="fa fa-universal-access" aria-hidden="true"></i><span>Study field university</span> </a></li>
+                                <li><a href="@Url.Action("Index","study_program")"><i class="fa fa-product-hunt" aria-hidden="true"></i> <span>Study program</span> </a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fa fa-language" aria-hidden="true"></i><span>About Language</span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="@Url.Action("Index","languages")"><i class="fa fa-language" aria-hidden="true"></i> <span>Language</span> </a></li>
+                                <li><a href="@Url.Action("Index","profiencies")"><i class="fa fa-level-up" aria-hidden="true"></i><span>Profiency</span> </a></li>
+                                <li><a href="@Url.Action("Index","test_type")"><i class="fa fa-text-height" aria-hidden="true"></i><span>Test type</span> </a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fa fa-cc-paypal" aria-hidden="true"></i><span> Payment table</span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="@Url.Action("Index","payments")"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Payment</span> </a></li>
+                                <li><a href="@Url.Action("Index","pay_method")"><i class="fa fa-money" aria-hidden="true"></i><span>Payment method</span> </a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fa fa-google-wallet" aria-hidden="true"></i><span> Plans </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="@Url.Action("Index","acount_plan")"><i class="fa fa-sort-amount-desc"></i> <span>Acount Plan</span> </a></li>
+                                <li><a href="@Url.Action("Index","acount_value")"><i class="fa fa-sort-amount-asc"></i> <span>Acount Value</span> </a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a href="@Url.Action("Index","bugdets")"><i class="fa fa-money"></i> <span>Budget</span> </a></li>
+                        <li><a href="@Url.Action("Index","Topics")"><i class="fa fa-list-alt" aria-hidden="true"></i><span>Topic</span> </a></li>
+                        <li><a href="@Url.Action("Index","SameDates")"><i class="fa fa-cog" aria-hidden="true"></i><span>Settings</span> </a></li>
+                        <li><a href="@Url.Action("Index","Faqs")"><i class="fa fa-ravelry" aria-hidden="true"></i><span>FAQ</span> </a></li>
+                        <li><a href="@Url.Action("Index","Contacts")"><i class="fa fa-phone-square" aria-hidden="true"></i> <span>Contact</span> </a></li>
+                        <li><a href="@Url.Action("Index","referances")"><i class="fa fa-info" aria-hidden="true"></i><span>Referances</span> </a></li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fa fa-lock" aria-hidden="true"></i><span>About Admin </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="@Url.Action("Index","adm_user")"><i class="fa fa-clipboard" aria-hidden="true"></i><span>Admins</span> </a></li>
+                                <li><a href="@Url.Action("Index","UsrLevels")"><i class="fa fa-file" aria-hidden="true"></i><span>User level</span> </a></li>
+                                @*<li><a href="@Url.Action("Index","user_role")"><i class="fa fa-picture-o" aria-hidden="true"></i><span>User Role</span> </a></li>
+                                <li><a href="@Url.Action("Index","users_to_userRole")"><i class="fa fa-picture-o" aria-hidden="true"></i><span>Users to users role</span> </a></li>*@
+                            </ul>
+                        </li>
+
+                        <li><a href="@Url.Action("Index","Calendar")"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> <span>Calendar</span> </a></li>
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -left -->
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="container">
+                <div class="row" style="margin-top: 72px;">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <h4 class="page-title float-left">
+                                <a href="https://www.schoolapply.com/">
+                                    ApplyToUniversity
+                                </a>
+                            </h4>
+                            <ol class="breadcrumb float-right">
+                                <li class="breadcrumb-item">Dashboard</li>
+                                <li class="breadcrumb-item">@ViewBag.Title</li>
+                            </ol>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                @RenderBody()
+                <footer class="footer text-right">
+                    2017 - 2018 © Firuze Poladzade - ApplyUniversity.com
+                </footer>
+            </div>
+        </div>
+
+
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+    <!-- jQuery  -->
+    <script src="~/Areas/Public/assets/js/jquery.min.js"></script>
+    <script src="~/Areas/Public/assets/js/popper.min.js"></script>
+    <script src="~/Areas/Public/assets/js/bootstrap.min.js"></script>
+    <script src="~/Areas/Public/assets/js/metisMenu.min.js"></script>
+    <script src="~/Areas/Public/assets/js/waves.js"></script>
+    <script src="~/Areas/Public/assets/js/jquery.slimscroll.js"></script>
+    <!-- Required datatable js -->
+    <script src="~/Areas/Public/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Areas/Public/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="~/Areas/Public/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/Areas/Public/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="~/Areas/Public/plugins/datatables/jszip.min.js"></script>
+    <script src="~/Areas/Public/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/Areas/Public/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/Areas/Public/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/Areas/Public/plugins/datatables/buttons.print.min.js"></script>
+    <!-- Calendar examples -->
+    <script src="~/Areas/Public/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/Areas/Public/plugins/moment/moment.js"></script>
+    <script src='~/Areas/Public/plugins/fullcalendar/js/fullcalendar.min.js'></script>
+    <script src="~/Areas/Public/assets/pages/jquery.calendar.js"></script>
+    <!-- Responsive examples -->
+    <script src="~/Areas/Public/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/Areas/Public/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <!-- App js -->
+    <script src="~/Areas/Public/assets/js/jquery.core.js"></script>
+    <script src="~/Areas/Public/assets/js/jquery.app.js"></script>
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').DataTable();
+
+            //Buttons examples
+            var table = $('#datatable-buttons').DataTable({
+                lengthChange: false,
+                buttons: ['copy', 'excel', 'pdf']
+            });
+
+            table.buttons().container()
+                .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+
+          
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ApplyUni.Models.profiency>
+
+@{
+    ViewBag.Title = "Profiency";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Profiency</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "profiencies", null, new { @class = "btn btn-gradient waves-light waves-effect w-md" })
+</p>
+<div class="card-box table-responsive">
+    <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>
+                   Profiency level name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.profiency_level)
+                </td>
+                <td>
+                    <button class="btn-outline-** btn btn-light waves-effect w-md">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id, @style = "color:black" })
+                    </button>
+                    <button class="btn-outline-** btn btn-light waves-effect w-md">
+                        @Html.ActionLink("Details", "Details", new { id = item.id })
+                    </button>
+                    <button class="btn-outline-** btn btn-light waves-effect w-md">
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    </button>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ApplyUni.Models.referance>
+
+@{
+    ViewBag.Title = "Referance";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Referance</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "referances", null, new { @class = "btn btn-gradient waves-light waves-effect w-md" })
+</p>
+<div class="card-box table-responsive">
+    <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ref_firstname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ref_lastname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ref_email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ref_Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ref_relation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.essasy)
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ref_firstname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ref_lastname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ref_email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ref_Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ref_relation)
+                    </td>
+                    <td>
+                        @Html.Raw(item.essasy.Length > 200 ? item.essasy.Substring(0, 250) : item.essasy)...
+                    </td>
+                    <td>
+                        <button class="btn-outline-** btn btn-light waves-effect w-md">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id, @style = "color:black" })
+                        </button>
+                        <button class="btn-outline-** btn btn-light waves-effect w-md">
+                            @Html.ActionLink("Details", "Details", new { id = item.id })
+                        </button>
+                        <button class="btn-outline-** btn btn-light waves-effect w-md">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                        </button>
+                    </td>
+                </tr>
+            }
+
+    </table>
+    </div>

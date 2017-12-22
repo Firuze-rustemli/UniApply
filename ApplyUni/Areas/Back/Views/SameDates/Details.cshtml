@@ -1,0 +1,82 @@
+﻿@model ApplyUni.Models.SameDate
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4 style="margin-top: 65px;">Details</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+           Logo
+        </dt>
+
+        <dd>
+            <img src="~/Uploads/@Html.DisplayNameFor(model => model.logo)" width="100" />
+        </dd>
+
+        <dt>
+           Facebook link
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.facebook)
+        </dd>
+
+        <dt>
+         Linkedin link
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.linkedin)
+        </dd>
+
+        <dt>
+         Twitter link
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.twitter)
+        </dd>
+
+        <dt>
+         Google link
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.google)
+        </dd>
+
+        <dt>
+        Instagram link
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.instagram)
+        </dd>
+
+        <dt>
+            Phone
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+          Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.location)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

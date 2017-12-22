@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ApplyUni.Models.University>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>University</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "Universities", null, new { @class = "btn btn-primary" })
+</p>
+<div class="card-box table-responsive">
+    <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rank_to_rait.Uni_ranking.ranking_category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rank_to_rait.ranking_rating.rate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.uni_date.start_date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.uni_date.graduate_date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Uni_detail.average_tution)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Uni_fact.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Uni_fact.point)
+                </th>
+            </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.rank_to_rait.Uni_ranking.ranking_category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.rank_to_rait.ranking_rating.rate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.uni_date.start_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.uni_date.graduate_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Uni_detail.average_tution)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Uni_fact.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Uni_fact.point)
+                    </td>
+                    <td>
+                        <button class="btn-outline-** btn btn-light waves-effect w-md">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id, @style = "color:black" })
+                        </button>
+                        <button class="btn-outline-** btn btn-light waves-effect w-md">
+                            @Html.ActionLink("Details", "Details", new { id = item.id })
+                        </button>
+                        <button class="btn-outline-** btn btn-light waves-effect w-md">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                        </button>
+                    </td>
+                </tr>
+            }
+    </table>
+    </div>

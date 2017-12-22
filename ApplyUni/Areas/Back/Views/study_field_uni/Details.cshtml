@@ -1,0 +1,35 @@
+﻿@model ApplyUni.Models.study_field_uni
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h4 style="margin-top: 65px;">Details</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+           Study field name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.study_field.field_name)
+        </dd>
+
+        <dt>
+            University name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.University.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,56 @@
+﻿@model ApplyUni.Models.Language
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="margin-top:60px;">Delete</h2>
+<h3 style="color:#f36270;">Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+          Language name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lang_name)
+        </dd>
+
+        <dt>
+            Language score
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.score)
+        </dd>
+
+        <dt>
+           Language level
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.profiency.profiency_level)
+        </dd>
+
+        <dt>
+           Language Level
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test_type.type_name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button type="submit" class="btn btn-danger waves-light waves-effect w-md">Delete</button> | |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

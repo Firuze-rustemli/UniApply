@@ -1,0 +1,45 @@
+﻿@model ApplyUni.Models.Acount_value
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="margin-top:60px;">Delete</h2>
+<h3 style="color:#f36270;">Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+           Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+           Acount plan
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acount_plan.title)
+        </dd>
+        <dt>
+          Data icon
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_icon)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button type="submit" class="btn btn-danger waves-light waves-effect w-md">Delete</button> | |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

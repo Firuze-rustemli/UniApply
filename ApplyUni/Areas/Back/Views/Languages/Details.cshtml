@@ -1,0 +1,50 @@
+﻿@model ApplyUni.Models.Language
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+            Language name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lang_name)
+        </dd>
+
+        <dt>
+            Language score
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.score)
+        </dd>
+
+        <dt>
+            Language level
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.profiency.profiency_level)
+        </dd>
+
+        <dt>
+            Language type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test_type.type_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

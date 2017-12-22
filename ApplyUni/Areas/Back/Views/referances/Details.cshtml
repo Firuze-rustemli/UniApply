@@ -1,0 +1,66 @@
+﻿@model ApplyUni.Models.referance
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Back/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left: 20px;">
+        <dt>
+            @Html.DisplayNameFor(model => model.ref_firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ref_firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ref_lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ref_lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ref_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ref_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ref_Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ref_Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ref_relation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ref_relation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.essasy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.essasy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

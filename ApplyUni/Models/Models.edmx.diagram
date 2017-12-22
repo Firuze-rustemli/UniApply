@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="86430fa109b0470384319edd36f8258b" Name="Diagram1" ZoomLevel="109">
+        <EntityTypeShape EntityType="ApplyModel.acount_plan" Width="1.5" PointX="5.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Acount_value" Width="1.5" PointX="8" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Adm_User" Width="1.5" PointX="13" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Bugdet" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Category" Width="1.5" PointX="17.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.citizinship" Width="1.5" PointX="3.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.City" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Contact" Width="1.5" PointX="20" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Country" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.degree_level" Width="1.5" PointX="3.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Faq" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Journey" Width="1.5" PointX="2.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Language" Width="1.5" PointX="16" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.lastest_post" Width="1.5" PointX="20" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Pay_method" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Payment" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.post_galery" Width="1.5" PointX="18" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.profiency" Width="1.5" PointX="13.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.rank_to_rait" Width="1.5" PointX="11" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.ranking_rating" Width="1.5" PointX="8.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.referance" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.study_field" Width="1.5" PointX="3.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.study_field_uni" Width="1.5" PointX="15.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.study_program" Width="1.5" PointX="6" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Test_type" Width="1.5" PointX="13.75" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Topic" Width="1.5" PointX="17.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.uni_date" Width="1.5" PointX="11" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Uni_detail" Width="1.5" PointX="11" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Uni_fact" Width="1.5" PointX="11" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Uni_ranking" Width="1.5" PointX="8.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.University" Width="1.5" PointX="13.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.user_finance_plan" Width="1.5" PointX="3.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.Users" Width="1.5" PointX="6" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ApplyModel.UsrLevel" Width="1.5" PointX="10.75" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="ApplyModel.FK_Acount_value_acount_plan" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Adm_User_UsrLevel" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Users_Bugdet" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_lastest_post_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Users_citizinship" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_City_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Contact_Topic" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Users_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Users_Country1" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Users_degree_level" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Language_profiency" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Language_Test_type" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Payment_method" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Payment_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_rank_to_rait_ranking_rating" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_rank_to_rait_Uni_ranking" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_University_rank_to_rait" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_study_field_uni_study_field" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_study_program_study_field" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Users_study_field" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_study_field_uni_University" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_University_uni_date" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_University_Uni_detail" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_University_Uni_fact" ManuallyRouted="false" />
+        <AssociationConnector Association="ApplyModel.FK_Users_user_finance_plan" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ApplyModel.Type_blog" Width="1.5" PointX="15.75" PointY="6.25" />
+        <AssociationConnector Association="ApplyModel.FK_post_galery_Type" />
+        <EntityTypeShape EntityType="ApplyModel.SameDate" Width="1.5" PointX="0.75" PointY="15.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15D8BE1B-4D08-4197-A617-F60B54721350}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApplyUni</RootNamespace>
+    <AssemblyName>ApplyUni</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Back\BackAreaRegistration.cs" />
+    <Compile Include="Areas\Back\Controllers\acount_planController.cs" />
+    <Compile Include="Areas\Back\Controllers\Acount_valueController.cs" />
+    <Compile Include="Areas\Back\Controllers\Adm_UserController.cs" />
+    <Compile Include="Areas\Back\Controllers\BugdetsController.cs" />
+    <Compile Include="Areas\Back\Controllers\CalendarController.cs" />
+    <Compile Include="Areas\Back\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Back\Controllers\CitiesController.cs" />
+    <Compile Include="Areas\Back\Controllers\citizinshipsController.cs" />
+    <Compile Include="Areas\Back\Controllers\ContactsController.cs" />
+    <Compile Include="Areas\Back\Controllers\CountriesController.cs" />
+    <Compile Include="Areas\Back\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Back\Controllers\degree_levelController.cs" />
+    <Compile Include="Areas\Back\Controllers\FaqsController.cs" />
+    <Compile Include="Areas\Back\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Back\Controllers\LanguagesController.cs" />
+    <Compile Include="Areas\Back\Controllers\lastest_postController.cs" />
+    <Compile Include="Areas\Back\Controllers\PaymentsController.cs" />
+    <Compile Include="Areas\Back\Controllers\Pay_methodController.cs" />
+    <Compile Include="Areas\Back\Controllers\post_galeryController.cs" />
+    <Compile Include="Areas\Back\Controllers\profienciesController.cs" />
+    <Compile Include="Areas\Back\Controllers\referancesController.cs" />
+    <Compile Include="Areas\Back\Controllers\SameDatesController.cs" />
+    <Compile Include="Areas\Back\Controllers\study_fieldController.cs" />
+    <Compile Include="Areas\Back\Controllers\study_field_uniController.cs" />
+    <Compile Include="Areas\Back\Controllers\study_programController.cs" />
+    <Compile Include="Areas\Back\Controllers\Test_typeController.cs" />
+    <Compile Include="Areas\Back\Controllers\TopicsController.cs" />
+    <Compile Include="Areas\Back\Controllers\Type_blogController.cs" />
+    <Compile Include="Areas\Back\Controllers\UniversitiesController.cs" />
+    <Compile Include="Areas\Back\Controllers\uni_dateController.cs" />
+    <Compile Include="Areas\Back\Controllers\Uni_detailController.cs" />
+    <Compile Include="Areas\Back\Controllers\Uni_factController.cs" />
+    <Compile Include="Areas\Back\Controllers\Uni_rankingController.cs" />
+    <Compile Include="Areas\Back\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Back\Controllers\user_finance_planController.cs" />
+    <Compile Include="Areas\Back\Controllers\UsrLevelsController.cs" />
+    <Compile Include="Filter\Adminlvl.cs" />
+    <Compile Include="Filter\Auth.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\acount_plan.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Acount_value.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Adm_User.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bugdet.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\citizinship.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\degree_level.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Faq.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Journey.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Language.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lastest_post.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payment.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pay_method.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\post_galery.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\profiency.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ranking_rating.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\rank_to_rait.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\referance.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SameDate.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\study_field.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\study_field_uni.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\study_program.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Test_type.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Topic.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Type_blog.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\University.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\uni_date.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Uni_detail.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Uni_fact.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Uni_ranking.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\user_finance_plan.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsrLevel.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Public\assets\css\bootstrap.min.css" />
+    <Content Include="Areas\Public\assets\css\icons.css" />
+    <Content Include="Areas\Public\assets\css\metismenu.min.css" />
+    <Content Include="Areas\Public\assets\css\style.css" />
+    <Content Include="Areas\Public\assets\fonts\dripicons-v2.svg" />
+    <Content Include="Areas\Public\assets\fonts\feather-webfont.svg" />
+    <Content Include="Areas\Public\assets\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="Areas\Public\assets\fonts\materialdesignicons-webfontdf71.svg" />
+    <Content Include="Areas\Public\assets\images\attached-files\img-1.jpg" />
+    <Content Include="Areas\Public\assets\images\attached-files\img-2.jpg" />
+    <Content Include="Areas\Public\assets\images\attached-files\img-3.jpg" />
+    <Content Include="Areas\Public\assets\images\bg-1.png" />
+    <Content Include="Areas\Public\assets\images\logo.png" />
+    <Content Include="Areas\Public\assets\images\ranking.png" />
+    <Content Include="Models\Models.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Models.edmx</DependentUpon>
+      <LastGenOutput>Models.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Models.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Models.edmx</DependentUpon>
+      <LastGenOutput>Models.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\ckeditor\adapters\jquery.js" />
+    <Content Include="Scripts\ckeditor\ckeditor.js" />
+    <Content Include="Scripts\ckeditor\config.js" />
+    <Content Include="Scripts\ckeditor\contents.css" />
+    <Content Include="Scripts\ckeditor\lang\af.js" />
+    <Content Include="Scripts\ckeditor\lang\ar.js" />
+    <Content Include="Scripts\ckeditor\lang\az.js" />
+    <Content Include="Scripts\ckeditor\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\lang\bn.js" />
+    <Content Include="Scripts\ckeditor\lang\bs.js" />
+    <Content Include="Scripts\ckeditor\lang\ca.js" />
+    <Content Include="Scripts\ckeditor\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\lang\da.js" />
+    <Content Include="Scripts\ckeditor\lang\de-ch.js" />
+    <Content Include="Scripts\ckeditor\lang\de.js" />
+    <Content Include="Scripts\ckeditor\lang\el.js" />
+    <Content Include="Scripts\ckeditor\lang\en-au.js" />
+    <Content Include="Scripts\ckeditor\lang\en-ca.js" />
+    <Content Include="Scripts\ckeditor\lang\en-gb.js" />
+    <Content Include="Scripts\ckeditor\lang\en.js" />
+    <Content Include="Scripts\ckeditor\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\lang\es-mx.js" />
+    <Content Include="Scripts\ckeditor\lang\es.js" />
+    <Content Include="Scripts\ckeditor\lang\et.js" />
+    <Content Include="Scripts\ckeditor\lang\eu.js" />
+    <Content Include="Scripts\ckeditor\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\lang\fo.js" />
+    <Content Include="Scripts\ckeditor\lang\fr-ca.js" />
+    <Content Include="Scripts\ckeditor\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\lang\gl.js" />
+    <Content Include="Scripts\ckeditor\lang\gu.js" />
+    <Content Include="Scripts\ckeditor\lang\he.js" />
+    <Content Include="Scripts\ckeditor\lang\hi.js" />
+    <Content Include="Scripts\ckeditor\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\lang\hu.js" />
+    <Content Include="Scripts\ckeditor\lang\id.js" />
+    <Content Include="Scripts\ckeditor\lang\is.js" />
+    <Content Include="Scripts\ckeditor\lang\it.js" />
+    <Content Include="Scripts\ckeditor\lang\ja.js" />
+    <Content Include="Scripts\ckeditor\lang\ka.js" />
+    <Content Include="Scripts\ckeditor\lang\km.js" />
+    <Content Include="Scripts\ckeditor\lang\ko.js" />
+    <Content Include="Scripts\ckeditor\lang\ku.js" />
+    <Content Include="Scripts\ckeditor\lang\lt.js" />
+    <Content Include="Scripts\ckeditor\lang\lv.js" />
+    <Content Include="Scripts\ckeditor\lang\mk.js" />
+    <Content Include="Scripts\ckeditor\lang\mn.js" />
+    <Content Include="Scripts\ckeditor\lang\ms.js" />
+    <Content Include="Scripts\ckeditor\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\lang\no.js" />
+    <Content Include="Scripts\ckeditor\lang\oc.js" />
+    <Content Include="Scripts\ckeditor\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\lang\pt.js" />
+    <Content Include="Scripts\ckeditor\lang\ro.js" />
+    <Content Include="Scripts\ckeditor\lang\ru.js" />
+    <Content Include="Scripts\ckeditor\lang\si.js" />
+    <Content Include="Scripts\ckeditor\lang\sk.js" />
+    <Content Include="Scripts\ckeditor\lang\sl.js" />
+    <Content Include="Scripts\ckeditor\lang\sq.js" />
+    <Content Include="Scripts\ckeditor\lang\sr-latn.js" />
+    <Content Include="Scripts\ckeditor\lang\sr.js" />
+    <Content Include="Scripts\ckeditor\lang\sv.js" />
+    <Content Include="Scripts\ckeditor\lang\th.js" />
+    <Content Include="Scripts\ckeditor\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\lang\tt.js" />
+    <Content Include="Scripts\ckeditor\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\lang\zh.js" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Scripts\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Scripts\ckeditor\plugins\icons.png" />
+    <Content Include="Scripts\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Scripts\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Scripts\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Scripts\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Scripts\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\dialog.css" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\editor.css" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\editor_ie.css" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\icons.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\images\arrow.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\images\close.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\images\lock.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\images\refresh.png" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="Scripts\ckeditor\styles.js" />
+    <Content Include="Uploads\blog1.jpg" />
+    <Content Include="Uploads\blog2.jpg" />
+    <Content Include="Uploads\blog3.jpg" />
+    <Content Include="Areas\Public\assets\images\email\1.png" />
+    <Content Include="Areas\Public\assets\images\email\2.png" />
+    <Content Include="Areas\Public\assets\images\email\3.png" />
+    <Content Include="Areas\Public\assets\images\faq_icons\edit.png" />
+    <Content Include="Areas\Public\assets\images\faq_icons\envelope.png" />
+    <Content Include="Areas\Public\assets\images\faq_icons\files.png" />
+    <Content Include="Areas\Public\assets\images\faq_icons\open-book-1.png" />
+    <Content Include="Areas\Public\assets\images\faq_icons\shield-1.png" />
+    <Content Include="Areas\Public\assets\images\faq_icons\tag.png" />
+    <Content Include="Areas\Public\assets\images\logoUp.png" />
+    <Content Include="Areas\Public\assets\images\logoUps.png" />
+    <Content Include="Areas\Public\assets\images\small\img-1.jpg" />
+    <Content Include="Areas\Public\assets\images\small\img-2.jpg" />
+    <Content Include="Areas\Public\assets\images\small\img-3.jpg" />
+    <Content Include="Areas\Public\assets\images\small\img-4.jpg" />
+    <Content Include="Areas\Public\assets\images\small\img-5.jpg" />
+    <Content Include="Areas\Public\assets\images\small\img-6.jpg" />
+    <Content Include="Areas\Public\assets\images\small\img-7.jpg" />
+    <Content Include="Areas\Public\assets\images\users\avatar-1.jpg" />
+    <Content Include="Areas\Public\assets\images\users\avatar-2.jpg" />
+    <Content Include="Areas\Public\assets\images\users\avatar-3.jpg" />
+    <Content Include="Areas\Public\assets\images\users\avatar-4.jpg" />
+    <Content Include="Areas\Public\assets\images\users\avatar-5.jpg" />
+    <Content Include="Areas\Public\assets\images\users\avatar-6.jpg" />
+    <Content Include="Areas\Public\assets\images\users\avatar-7.jpg" />
+    <Content Include="Areas\Public\assets\images\users\avatar-8.jpg" />
+    <Content Include="Areas\Public\assets\images\users\avatar-9.jpg" />
+    <Content Include="Areas\Public\assets\js\bootstrap.min.js" />
+    <Content Include="Areas\Public\assets\js\jquery.app.js" />
+    <Content Include="Areas\Public\assets\js\jquery.core.js" />
+    <Content Include="Areas\Public\assets\js\jquery.min.js" />
+    <Content Include="Areas\Public\assets\js\jquery.slimscroll.js" />
+    <Content Include="Areas\Public\assets\js\metisMenu.min.js" />
+    <Content Include="Areas\Public\assets\js\modernizr.min.js" />
+    <Content Include="Areas\Public\assets\js\popper.min.js" />
+    <Content Include="Areas\Public\assets\js\waves.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.autocomplete.init.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.calendar.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.chartjs.init.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.charts-sparkline.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.dashboard.init.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.flot.init.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.form-advanced.init.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.form-pickers.init.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.gmaps.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.jvectormap.init.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.mapael-map.init.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.morris.init.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.sweet-alert.init.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.toastr.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.wizard-init.js" />
+    <Content Include="Areas\Public\assets\pages\jquery.xeditable.init.js" />
+    <Content Include="Areas\Public\plugins\autocomplete\countries.js" />
+    <Content Include="Areas\Public\plugins\autocomplete\jquery.autocomplete.min.js" />
+    <Content Include="Areas\Public\plugins\autocomplete\jquery.mockjax.js" />
+    <Content Include="Areas\Public\plugins\autoNumeric\autoNumeric.js" />
+    <Content Include="Areas\Public\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css" />
+    <Content Include="Areas\Public\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Areas\Public\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Areas\Public\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Areas\Public\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="Areas\Public\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Areas\Public\plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.min.js" />
+    <Content Include="Areas\Public\plugins\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Areas\Public\plugins\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Areas\Public\plugins\bootstrap-filestyle\js\bootstrap-filestyle.min.js" />
+    <Content Include="Areas\Public\plugins\bootstrap-fileupload\bootstrap-fileupload.css" />
+    <Content Include="Areas\Public\plugins\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <Content Include="Areas\Public\plugins\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="Areas\Public\plugins\bootstrap-maxlength\bootstrap-maxlength.js" />
+    <Content Include="Areas\Public\plugins\bootstrap-select\css\bootstrap-select.min.css" />
+    <Content Include="Areas\Public\plugins\bootstrap-select\js\bootstrap-select.js" />
+    <Content Include="Areas\Public\plugins\bootstrap-tagsinput\css\bootstrap-tagsinput.css" />
+    <Content Include="Areas\Public\plugins\bootstrap-tagsinput\js\bootstrap-tagsinput.min.js" />
+    <Content Include="Areas\Public\plugins\bootstrap-timepicker\bootstrap-timepicker.js" />
+    <Content Include="Areas\Public\plugins\bootstrap-timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Areas\Public\plugins\bootstrap-touchspin\css\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="Areas\Public\plugins\bootstrap-touchspin\js\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="Areas\Public\plugins\bootstrap-xeditable\css\bootstrap-editable.css" />
+    <Content Include="Areas\Public\plugins\bootstrap-xeditable\img\clear.png" />
+    <Content Include="Areas\Public\plugins\bootstrap-xeditable\img\loading.gif" />
+    <Content Include="Areas\Public\plugins\bootstrap-xeditable\js\bootstrap-editable.min.js" />
+    <Content Include="Areas\Public\plugins\chart.js\chart.bundle.js" />
+    <Content Include="Areas\Public\plugins\clockpicker\css\bootstrap-clockpicker.min.css" />
+    <Content Include="Areas\Public\plugins\clockpicker\js\bootstrap-clockpicker.min.js" />
+    <Content Include="Areas\Public\plugins\counterup\jquery.counterup.min.js" />
+    <Content Include="Areas\Public\plugins\custombox\css\custombox.min.css" />
+    <Content Include="Areas\Public\plugins\custombox\js\custombox.min.js" />
+    <Content Include="Areas\Public\plugins\custombox\js\legacy.min.js" />
+    <Content Include="Areas\Public\plugins\datatables\buttons.bootstrap4.min.css" />
+    <Content Include="Areas\Public\plugins\datatables\buttons.bootstrap4.min.js" />
+    <Content Include="Areas\Public\plugins\datatables\buttons.html5.min.js" />
+    <Content Include="Areas\Public\plugins\datatables\buttons.print.min.js" />
+    <Content Include="Areas\Public\plugins\datatables\dataTables.bootstrap4.min.css" />
+    <Content Include="Areas\Public\plugins\datatables\dataTables.bootstrap4.min.js" />
+    <Content Include="Areas\Public\plugins\datatables\dataTables.buttons.min.js" />
+    <Content Include="Areas\Public\plugins\datatables\dataTables.responsive.min.js" />
+    <Content Include="Areas\Public\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="Areas\Public\plugins\datatables\jszip.min.js" />
+    <Content Include="Areas\Public\plugins\datatables\pdfmake.min.js" />
+    <Content Include="Areas\Public\plugins\datatables\responsive.bootstrap4.min.css" />
+    <Content Include="Areas\Public\plugins\datatables\responsive.bootstrap4.min.js" />
+    <Content Include="Areas\Public\plugins\datatables\vfs_fonts.js" />
+    <Content Include="Areas\Public\plugins\flot-chart\curvedLines.js" />
+    <Content Include="Areas\Public\plugins\flot-chart\jquery.flot.axislabels.js" />
+    <Content Include="Areas\Public\plugins\flot-chart\jquery.flot.crosshair.js" />
+    <Content Include="Areas\Public\plugins\flot-chart\jquery.flot.min.js" />
+    <Content Include="Areas\Public\plugins\flot-chart\jquery.flot.orderBars.min.js" />
+    <Content Include="Areas\Public\plugins\flot-chart\jquery.flot.pie.js" />
+    <Content Include="Areas\Public\plugins\flot-chart\jquery.flot.resize.js" />
+    <Content Include="Areas\Public\plugins\flot-chart\jquery.flot.selection.js" />
+    <Content Include="Areas\Public\plugins\flot-chart\jquery.flot.stack.js" />
+    <Content Include="Areas\Public\plugins\flot-chart\jquery.flot.time.js" />
+    <Content Include="Areas\Public\plugins\flot-chart\jquery.flot.tooltip.min.js" />
+    <Content Include="Areas\Public\plugins\fullcalendar\css\fullcalendar.min.css" />
+    <Content Include="Areas\Public\plugins\fullcalendar\js\fullcalendar.min.js" />
+    <Content Include="Areas\Public\plugins\gmaps\gmaps.min.js" />
+    <Content Include="Areas\Public\plugins\jquery-knob\jquery.knob.js" />
+    <Content Include="Areas\Public\plugins\jquery-mapael\jquery.mapael.min.js" />
+    <Content Include="Areas\Public\plugins\jquery-mapael\maps\usa_states.min.js" />
+    <Content Include="Areas\Public\plugins\jquery-mapael\maps\world_countries.min.js" />
+    <Content Include="Areas\Public\plugins\jquery-mapael\raphael-min.js" />
+    <Content Include="Areas\Public\plugins\jquery-sparkline\jquery.sparkline.min.js" />
+    <Content Include="Areas\Public\plugins\jquery-toastr\jquery.toast.min.css" />
+    <Content Include="Areas\Public\plugins\jquery-toastr\jquery.toast.min.js" />
+    <Content Include="Areas\Public\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Areas\Public\plugins\jquery.steps\css\jquery.steps.css" />
+    <Content Include="Areas\Public\plugins\jquery.steps\js\jquery.steps.min.js" />
+    <Content Include="Areas\Public\plugins\jvectormap\gdp-data.js" />
+    <Content Include="Areas\Public\plugins\jvectormap\jquery-jvectormap-2.0.2.css" />
+    <Content Include="Areas\Public\plugins\jvectormap\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="Areas\Public\plugins\jvectormap\jquery-jvectormap-asia-mill.js" />
+    <Content Include="Areas\Public\plugins\jvectormap\jquery-jvectormap-au-mill.js" />
+    <Content Include="Areas\Public\plugins\jvectormap\jquery-jvectormap-ca-lcc.js" />
+    <Content Include="Areas\Public\plugins\jvectormap\jquery-jvectormap-de-mill.js" />
+    <Content Include="Areas\Public\plugins\jvectormap\jquery-jvectormap-in-mill.js" />
+    <Content Include="Areas\Public\plugins\jvectormap\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="Areas\Public\plugins\jvectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Areas\Public\plugins\jvectormap\jquery-jvectormap-us-il-chicago-mill-en.js" />
+    <Content Include="Areas\Public\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Areas\Public\plugins\moment\moment.js" />
+    <Content Include="Areas\Public\plugins\morris\morris.css" />
+    <Content Include="Areas\Public\plugins\morris\morris.min.js" />
+    <Content Include="Areas\Public\plugins\parsleyjs\parsley.min.js" />
+    <Content Include="Areas\Public\plugins\raphael\raphael-min.js" />
+    <Content Include="Areas\Public\plugins\responsive-table\css\rwd-table.min.css" />
+    <Content Include="Areas\Public\plugins\responsive-table\js\rwd-table.min.js" />
+    <Content Include="Areas\Public\plugins\select2\css\select2.min.css" />
+    <Content Include="Areas\Public\plugins\select2\js\select2.min.js" />
+    <Content Include="Areas\Public\plugins\summernote\summernote-bs4.css" />
+    <Content Include="Areas\Public\plugins\summernote\summernote-bs4.min.js" />
+    <Content Include="Areas\Public\plugins\sweet-alert\sweetalert2.min.css" />
+    <Content Include="Areas\Public\plugins\sweet-alert\sweetalert2.min.js" />
+    <Content Include="Areas\Public\plugins\switchery\switchery.min.css" />
+    <Content Include="Areas\Public\plugins\switchery\switchery.min.js" />
+    <Content Include="Areas\Public\plugins\tablesaw\css\tablesaw.css" />
+    <Content Include="Areas\Public\plugins\tablesaw\js\tablesaw-init.js" />
+    <Content Include="Areas\Public\plugins\tablesaw\js\tablesaw.js" />
+    <Content Include="Areas\Public\plugins\tiny-editable\mindmup-editabletable.js" />
+    <Content Include="Areas\Public\plugins\tiny-editable\numeric-input-example.js" />
+    <Content Include="Areas\Public\plugins\tinymce\tinymce.min.js" />
+    <Content Include="Areas\Public\plugins\waypoints\lib\jquery.waypoints.min.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Back\Views\web.config" />
+    <Content Include="Areas\Public\assets\fonts\dripicons-v2.eot" />
+    <Content Include="Areas\Public\assets\fonts\dripicons-v2.ttf" />
+    <Content Include="Areas\Public\assets\fonts\dripicons-v2.woff" />
+    <Content Include="Areas\Public\assets\fonts\dripicons-v2d41d.eot" />
+    <Content Include="Areas\Public\assets\fonts\feather-webfont.eot" />
+    <Content Include="Areas\Public\assets\fonts\feather-webfont.ttf" />
+    <Content Include="Areas\Public\assets\fonts\feather-webfont.woff" />
+    <Content Include="Areas\Public\assets\fonts\feather-webfontd41d.eot" />
+    <Content Include="Areas\Public\assets\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Areas\Public\assets\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Areas\Public\assets\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Areas\Public\assets\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="Areas\Public\assets\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Areas\Public\assets\fonts\materialdesignicons-webfontd41d.eot" />
+    <Content Include="Areas\Public\assets\fonts\materialdesignicons-webfontdf71.eot" />
+    <Content Include="Areas\Public\assets\fonts\materialdesignicons-webfontdf71.ttf" />
+    <Content Include="Areas\Public\assets\fonts\materialdesignicons-webfontdf71.woff" />
+    <Content Include="Areas\Public\assets\fonts\materialdesignicons-webfontdf71.woff2" />
+    <Content Include="Areas\Back\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Back\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Back\Views\Dashboard\index.cshtml" />
+    <Content Include="Areas\Public\plugins\summernote\font\summernote291f.eot" />
+    <Content Include="Areas\Public\plugins\summernote\font\summernote291f.ttf" />
+    <Content Include="Areas\Public\plugins\summernote\font\summernote291f.woff" />
+    <Content Include="Areas\Public\plugins\summernote\font\summernoted41d.eot" />
+    <Content Include="Areas\Back\Views\Topics\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Topics\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Topics\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Topics\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Topics\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Universities\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Universities\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Universities\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Universities\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Universities\Index.cshtml" />
+    <Content Include="Areas\Back\Views\acount_plan\Create.cshtml" />
+    <Content Include="Areas\Back\Views\acount_plan\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\acount_plan\Details.cshtml" />
+    <Content Include="Areas\Back\Views\acount_plan\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\acount_plan\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Acount_value\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Acount_value\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Acount_value\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Acount_value\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Acount_value\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Bugdets\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Bugdets\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Bugdets\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Bugdets\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Bugdets\Index.cshtml" />
+    <Content Include="Areas\Back\Views\post_galery\Create.cshtml" />
+    <Content Include="Areas\Back\Views\post_galery\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\post_galery\Details.cshtml" />
+    <Content Include="Areas\Back\Views\post_galery\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\post_galery\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Calendar\index.cshtml" />
+    <Content Include="Areas\Back\Views\Dashboard\CantAcss.cshtml" />
+    <Content Include="Areas\Back\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Home\Out.cshtml" />
+    <Content Include="Scripts\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="Scripts\ckeditor\README.md" />
+    <Content Include="Scripts\ckeditor\package.json" />
+    <Content Include="Scripts\ckeditor\LICENSE.md" />
+    <Content Include="Scripts\ckeditor\CHANGES.md" />
+    <Content Include="Areas\Back\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Back\Views\lastest_post\Create.cshtml" />
+    <Content Include="Areas\Back\Views\lastest_post\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\lastest_post\Details.cshtml" />
+    <Content Include="Areas\Back\Views\lastest_post\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\lastest_post\Index.cshtml" />
+    <EntityDeploy Include="Models\Models.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Models.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Models.edmx.diagram">
+      <DependentUpon>Models.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Back\Views\Countries\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Countries\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Countries\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Countries\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Countries\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Type_blog\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Type_blog\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Type_blog\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Type_blog\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Type_blog\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Cities\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Cities\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Cities\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Cities\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Cities\Index.cshtml" />
+    <Content Include="Areas\Back\Views\citizinships\Create.cshtml" />
+    <Content Include="Areas\Back\Views\citizinships\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\citizinships\Details.cshtml" />
+    <Content Include="Areas\Back\Views\citizinships\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\citizinships\Index.cshtml" />
+    <Content Include="Areas\Back\Views\user_finance_plan\Create.cshtml" />
+    <Content Include="Areas\Back\Views\user_finance_plan\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\user_finance_plan\Details.cshtml" />
+    <Content Include="Areas\Back\Views\user_finance_plan\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\user_finance_plan\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_detail\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_detail\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_detail\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_detail\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_detail\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_ranking\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_ranking\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_ranking\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_ranking\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_ranking\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_fact\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_fact\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_fact\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_fact\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Uni_fact\Index.cshtml" />
+    <Content Include="Areas\Back\Views\uni_date\Create.cshtml" />
+    <Content Include="Areas\Back\Views\uni_date\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\uni_date\Details.cshtml" />
+    <Content Include="Areas\Back\Views\uni_date\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\uni_date\Index.cshtml" />
+    <Content Include="Areas\Back\Views\degree_level\Create.cshtml" />
+    <Content Include="Areas\Back\Views\degree_level\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\degree_level\Details.cshtml" />
+    <Content Include="Areas\Back\Views\degree_level\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\degree_level\Index.cshtml" />
+    <Content Include="Areas\Back\Views\study_field\Create.cshtml" />
+    <Content Include="Areas\Back\Views\study_field\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\study_field\Details.cshtml" />
+    <Content Include="Areas\Back\Views\study_field\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\study_field\Index.cshtml" />
+    <Content Include="Areas\Back\Views\study_field_uni\Create.cshtml" />
+    <Content Include="Areas\Back\Views\study_field_uni\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\study_field_uni\Details.cshtml" />
+    <Content Include="Areas\Back\Views\study_field_uni\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\study_field_uni\Index.cshtml" />
+    <Content Include="Areas\Back\Views\study_program\Create.cshtml" />
+    <Content Include="Areas\Back\Views\study_program\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\study_program\Details.cshtml" />
+    <Content Include="Areas\Back\Views\study_program\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\study_program\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Languages\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Languages\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Languages\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Languages\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Languages\Index.cshtml" />
+    <Content Include="Areas\Back\Views\profiencies\Create.cshtml" />
+    <Content Include="Areas\Back\Views\profiencies\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\profiencies\Details.cshtml" />
+    <Content Include="Areas\Back\Views\profiencies\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\profiencies\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Test_type\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Test_type\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Test_type\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Test_type\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Test_type\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Payments\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Payments\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Payments\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Payments\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Payments\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Pay_method\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Pay_method\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Pay_method\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Pay_method\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Pay_method\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Faqs\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Faqs\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Faqs\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Faqs\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Faqs\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Contacts\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Contacts\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Contacts\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Contacts\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Contacts\Index.cshtml" />
+    <Content Include="Areas\Back\Views\referances\Create.cshtml" />
+    <Content Include="Areas\Back\Views\referances\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\referances\Details.cshtml" />
+    <Content Include="Areas\Back\Views\referances\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\referances\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Adm_User\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Adm_User\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Adm_User\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Adm_User\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Adm_User\Index.cshtml" />
+    <Content Include="Areas\Back\Views\UsrLevels\Create.cshtml" />
+    <Content Include="Areas\Back\Views\UsrLevels\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\UsrLevels\Details.cshtml" />
+    <Content Include="Areas\Back\Views\UsrLevels\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\UsrLevels\Index.cshtml" />
+    <Content Include="Areas\Back\Views\SameDates\Create.cshtml" />
+    <Content Include="Areas\Back\Views\SameDates\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\SameDates\Details.cshtml" />
+    <Content Include="Areas\Back\Views\SameDates\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\SameDates\Index.cshtml" />
+    <Content Include="Areas\Back\Views\Users\Create.cshtml" />
+    <Content Include="Areas\Back\Views\Users\Delete.cshtml" />
+    <Content Include="Areas\Back\Views\Users\Details.cshtml" />
+    <Content Include="Areas\Back\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\Back\Views\Users\Index.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Back\Models\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54030</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54030/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
